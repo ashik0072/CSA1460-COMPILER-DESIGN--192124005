@@ -1,0 +1,15 @@
+%{
+%}
+  
+%%
+bool|int|float|include|char|for|if|while|do|else|printf|scanf|main {}
+%%
+int yywrap(){}
+int main(int argc,char*argv[])
+{
+    yyin=fopen("vowels.c","r");
+    yyout=fopen("out.c","w");
+    yylex();
+    return 0;
+} 
+

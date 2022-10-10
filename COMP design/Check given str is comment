@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[50],b[10];
+	printf("Enter a line: ");
+	scanf("%[^\n]",&a);
+	if(a[0]=='/' && a[1]=='/')
+	{
+		printf("singleline comment");
+	}
+	else if(a[0]=='/' && a[1]=='*' && a[strlen(a)-1]=='/' && a[strlen(a)-2]=='*')
+	{
+		printf("multiline comment");
+	}
+	else
+	{
+		printf("Given line is not a comment line");
+	}
+	
+}

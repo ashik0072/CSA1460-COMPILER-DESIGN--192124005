@@ -1,0 +1,17 @@
+%{
+    int vow_count=0,const_count=0;
+%}
+  
+%%
+[aeiouAEIOU1234567890~!@#$%^&*()_+}|{":>?<`=\;'/.,] {vow_count++;}
+[a-zA-Z] {printf("%s \n",yytext);const_count++;}
+%%
+int yywrap(){}
+int main(int argc,char*argv[])
+{
+    yyin=fopen(argv[1],"r");
+    yylex();
+    printf("Number of consonants are:  %d\n", const_count);
+    fclose(yyin);
+} 
+

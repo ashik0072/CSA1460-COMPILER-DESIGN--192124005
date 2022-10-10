@@ -1,0 +1,15 @@
+%{
+   int a=0;
+%}
+  
+%%
+[@.com] {printf("Valid\n");}
+
+%%
+int yywrap(){}
+int main()
+{
+    printf("Enter the mail:");
+    yylex();
+    return 0;
+} 
